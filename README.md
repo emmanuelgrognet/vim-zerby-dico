@@ -14,6 +14,8 @@ Description :
 
 Zerby dico is the french dictionnary for Vim editor.
 
+![Zerby Dico Screencast](zerby-dico.gif)
+
 Usage :
 ==============
 
