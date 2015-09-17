@@ -1,8 +1,8 @@
 let g:pathZerbyDicoPlugin = expand('<sfile>:p:h')
 
 function! ZerbyRemoveDiacritics(word)
-  let diacs = 'áâãàçéêíóôõüú'
-  let repls = 'aaaaceeiooouu'
+  let diacs = 'áàâäãåçéèêëíìîïñóòôöõúùûüýÿ'
+  let repls = 'aaaaaaceeeeiiiinooooouuuuyy'
   let diacs .= toupper(diacs)
   let repls .= toupper(repls)
   return tr(a:word, diacs, repls)
