@@ -10,6 +10,7 @@ endfunction
 
 function! ZerbyDico()
     let result = 0
+    let resultThesaurus = 0
     let wordUnderCursor = expand("<cword>")
     if wordUnderCursor == ""
         echom "Aucun mot sélectionné."
@@ -33,15 +34,35 @@ function! ZerbyDico()
         endif
     endfor
     echom " "
+    let thesaurusFinal = []
     for lineThesaurus in thesaurus
         let listLineThesaurus = split(lineThesaurus, ";")
         let wordThesaurus = join(listLineThesaurus[1:1])
         if ZerbyRemoveDiacritics(wordThesaurus) == wordUnderCursor
-            echom "Synonyme(s) : ".join(listLineThesaurus[2:])
+            call add(thesaurusFinal, join(listLineThesaurus[2:]))
             let result = 1
+            let resultThesaurus = 1
         endif
     endfor
+    if resultThesaurus == 1
+        let stringThesaurusFinal = ""
+        let i = 0
+        let wordsListThesaurusFinal = []
+        for wordsThesaurus in thesaurusFinal
+            let wordsListThesaurus = split(wordsThesaurus, ",")
+            for wordThesaurus in wordsListThesaurus
+                let i = i + 1
+                call add(wordsListThesaurusFinal, wordThesaurus)
+                let stringThesaurusFinal = stringThesaurusFinal.i.")".wordThesaurus." "
+            endfor
+        endfor
+        echom "Synonyme(s) : ".stringThesaurusFinal
+    endif
+    let replaceWithWordThesaurus = input("Taper le chiffre du synonyme pour remplacer ou valider pour quitter : ")
+        if replaceWithWordThesaurus != "" && replaceWithWordThesaurus > 0 && replaceWithWordThesaurus <= i 
+        :exe 'normal! "_ciw'.join(wordsListThesaurusFinal[replaceWithWordThesaurus-1 : replaceWithWordThesaurus-1])
+    endif
     if result == 0
-        echom "Ce mot n'a pas été trouvé dans le dictionnaire"
+        echo "Ce mot n'a pas été trouvé dans le dictionnaire"
     endif
 endfunction
