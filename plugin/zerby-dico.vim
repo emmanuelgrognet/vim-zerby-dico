@@ -36,7 +36,6 @@ function! ZerbyDico()
     for lineThesaurus in thesaurus
         let listLineThesaurus = split(lineThesaurus, ";")
         let wordThesaurus = join(listLineThesaurus[1:1])
-""        echo ZerbyRemoveDiacritics(wordThesaurus) 
         if ZerbyRemoveDiacritics(wordThesaurus) == wordUnderCursor
             echom "Synonyme(s) : ".join(listLineThesaurus[2:])
             let result = 1

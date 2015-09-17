@@ -12,7 +12,7 @@ License : Provided under the GPL (http://www.gnu.org/copyleft/gpl.html).
 Description :
 =============
 
-Zerby dico is the french dictionnary for Vim editor.
+Zerby dico is the french dictionary for Vim editor.
 
 ![Zerby Dico Screencast](zerby-dico.gif)
 
@@ -26,4 +26,4 @@ nnoremap <buffer> <leader>zd :call ZerbyDico()<CR>
 
 vnoremap <buffer> <leader>zd :call ZerbyDico()<CR>
 ```
-This will map leader+zd to lookup into the dictionnary for the item under the cursor.
+This will map leader+zd to lookup into the dictionary for the item under the cursor.
