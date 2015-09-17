@@ -5,7 +5,7 @@ Version 0.1
 
 Last Change : 2015-09-17
 
-Author : Emmanuel Grognet <emmanuel AT grognet DOT fr>
+Author : Emmanuel Grognet (emmanuel AT grognet DOT fr)
 
 License : Provided under the GPL (http://www.gnu.org/copyleft/gpl.html).
 
