@@ -24,3 +24,4 @@ nnoremap <buffer> <leader>zd :call ZerbyDico()<CR>
 
 vnoremap <buffer> <leader>zd :call ZerbyDico()<CR>
 ```
+This will map leader+zd to lookup into the dictionnary for the item under the cursor.
