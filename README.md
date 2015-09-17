@@ -19,6 +19,8 @@ Usage :
 
 For example, you can put into your .vimrc
 
+```
 nnoremap <buffer> <leader>zd :call ZerbyDico()<CR>
 
 vnoremap <buffer> <leader>zd :call ZerbyDico()<CR>
+```
